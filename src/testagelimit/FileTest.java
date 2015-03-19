@@ -36,9 +36,8 @@ public class FileTest {
         file = fs; 
     }  
     /**
-     * Разбирает файл с вопросами построчно, заменяя символ & на '/n' для перевода на новую строку в вектор
+     * Разбирает файл с вопросами построчно, заменяя символ & на '\n' для перевода на новую строку в вектор
      * @return vector возвращает вектор, содержаший вопросы
-     * связанный с текстовым полем
      */
     public static Vector parseFile() throws FileNotFoundException, IOException{
         BufferedReader reader = null;
