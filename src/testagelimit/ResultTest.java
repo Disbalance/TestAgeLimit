@@ -9,13 +9,24 @@ import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 /**
- *
+ * Данный класс генерирует результаты теста по полученный ответам на вопросы от пользователя
  * @author Dark Hells
  */
 public class ResultTest {
+    /**
+     * Содержит иконку представляющую собой изображение
+     */
     static ImageIcon icon;
+    /**
+     * Содержит результат после анализа вектора ответов
+     */
     static Integer n = -1;
     
+    /**
+     * Загружает иконку в соответствии с результатом теста
+     * @param path хранит путь к изображения
+     * @return само изображение
+     */
      protected static ImageIcon createImageIcon(String path) {
         java.net.URL imgURL = ResultTest.class.getResource(path);
         if (imgURL != null) {
@@ -25,7 +36,11 @@ public class ResultTest {
             return null;
         }
      }
-     
+    
+     /**
+      * Анализирует вектор ответов
+      * @param vector содержит ответы пользователя на вопросы
+      */
     public static void result(Vector vector){
        for(int i=0;i<vector.size();i++){
            if ((Boolean)vector.get(i)) n = i;
@@ -37,7 +52,10 @@ public class ResultTest {
        createMessageDialog(n);
     }
     
-
+ /**
+  * Генерирует уведомление согласно результатам теста
+  * @param n содержит результат согласно теста
+  */
     public static void createMessageDialog(int n){
         switch(n){
             case 0: { 

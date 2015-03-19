@@ -11,16 +11,28 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
 /**
- *
+ * Данный класс является формой, которая отображает вопросы и принимает ответы от пользователя 
  * @author Dark Hells
  */
 public class Form extends javax.swing.JFrame {
+    /**
+     * Вектор содержит вопросы
+     */
     private static Vector vectorQuest;
+    /**
+     * Вектор содержит ответы
+     */
     private static Vector vectorAns = new Vector();
+    /**
+     * Содержит общее количество вопросов
+     */
     private static Integer num;
+    /**
+     * Текущий вопрос, на который отвечает пользователь
+     */
     private static Integer n = 0;
     /**
-     * Creates new form Form
+     * Создание новой формы
      */
     public Form() {
         initComponents();
@@ -176,7 +188,11 @@ public class Form extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+ /**
+  * Метод дает возможность перемещаться по вопросам вперед и вызывает в дальнейшем отрисовку данных
+  * @param evt игнорируется 
+  *
+  */
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         n++;
         if (n>num){
@@ -184,7 +200,11 @@ public class Form extends javax.swing.JFrame {
         }
         getData(n); 
     }//GEN-LAST:event_jButton2ActionPerformed
-
+ /**
+  * Метод дает возможность перемещаться по вопросам назад и вызывает в дальнейшем отрисовку данных
+  * @param evt игнорируется 
+  *
+  */
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
      n--;
      if(n<0){
@@ -192,36 +212,57 @@ public class Form extends javax.swing.JFrame {
       }
       getData(n);
     }//GEN-LAST:event_jButton1ActionPerformed
-
+ /**
+  * Выход из программы
+  * @param evt игнорируется 
+  *
+  */
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         System.exit(0);
     }//GEN-LAST:event_jMenuItem2ActionPerformed
-
+ /**
+  *Выбор варианты ответа с дальнейшей записью в вектор ответов на вопросы
+  * @param evt игнорируется 
+  *
+  */
     private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
        clearRadio();
        jRadioButton1.setSelected(true);
        setAns(n, true);
     }//GEN-LAST:event_jRadioButton1ActionPerformed
-
+/**
+  *Выбор варианты ответа с дальнейшей записью в вектор ответов на вопросы
+  * @param evt игнорируется 
+  *
+  */
     private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
         clearRadio();
         jRadioButton2.setSelected(true);
         setAns(n, false); 
     }//GEN-LAST:event_jRadioButton2ActionPerformed
-
+/**
+  *Метод завершает тест
+  * @param evt игнорируется 
+  *
+  */
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         ResultTest.result(vectorAns);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
+  /**
+  *Загружает вектор из класса FileTest и запускает инициализацию вектора ответов(vectorAns)
+  *
+  */
     public static void loadFile() throws FileNotFoundException, IOException{
         vectorQuest = FileTest.parseFile();
         num = vectorQuest.size()-1;
         initVectorAns(vectorQuest.size());
         
     }
+    /**
+     * Получает данные с векторов и выводит их в компоненты формы
+     * @param i номер вопроса 
+     */
     public static void getData(int i){
         clearRadio();
         jLabel1.setText("Вопрос "+(i+1)+" из "+(num+1));
@@ -232,27 +273,43 @@ public class Form extends javax.swing.JFrame {
           jRadioButton2.setSelected(true);  
         }
     }
-    
+    /**
+     * Инициализирует вектор ответов,заполняя его ответом false на все вопросы
+     * @param size количество вопросов
+     */
     public static void initVectorAns(int size){
         vectorAns.setSize(size);
         for (int i = 0;i<vectorAns.size();i++){
             vectorAns.set(i, false);
         }             
     }
-    
+    /**
+     * Очищает компоненты RadioButton
+     */
     public static void clearRadio(){
         jRadioButton1.setSelected(false);
         jRadioButton2.setSelected(false);
     }
-     
+    /**
+     * Получает ответ по номеру вопроса
+     * @param i номер вопроса
+     * @return  возвращает ответ на вопрос, записанный в векторе ответов
+     */ 
     public static boolean getAns(int i){
         return (boolean) vectorAns.get(i);
         
     }
+    /**
+     * Записывает ответ на вопрос
+     * @param i номер вопроса
+     * @param ans ответ на данный вопрос
+     */
     public static void setAns(int i, boolean ans){
         vectorAns.set(i, ans);
     }
-    
+    /**
+     * Главный метод вызова формы
+     */
     public static void main() {
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.

@@ -13,13 +13,13 @@ import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 /**
- *
+ * Данный класс содержит форму запуска теста
  * @author Dark Hells
  */
 public class MainForm extends javax.swing.JFrame {
 
     /**
-     * Creates new form MainForm
+     * Создается форма
      */
     public MainForm() {
         initComponents();
@@ -96,7 +96,10 @@ public class MainForm extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+/**
+ * Создается OpenDialog для открытия файла с вопросами
+ * @param evt игнорирутеся 
+ */
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         JFileChooser open = new JFileChooser();
         open.setAcceptAllFileFilterUsed(false);
@@ -114,12 +117,16 @@ public class MainForm extends javax.swing.JFrame {
             this.setVisible(false);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
-
+/**
+ * Выход из программы
+ * @param evt игнорируется
+ */
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         System.exit(0);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
+     * Главный метод вызова формы
      * @param args the command line arguments
      */
     public static void main(String[] args) {
