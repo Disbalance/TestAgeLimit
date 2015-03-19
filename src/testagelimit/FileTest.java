@@ -31,7 +31,16 @@ public class FileTest {
         reader = new BufferedReader(new InputStreamReader(new FileInputStream(file), "Cp1251"));
         String s;
         while( (s = reader.readLine()) != null){
-            vector.addElement(s);
+        char[] ch = s.toCharArray();
+        String data = "";
+            for(int i=0;i<s.length();i++){
+                if (ch[i]=='&'){
+                   data+='\n'; 
+                   i++;
+                }
+                data+=ch[i];
+            }
+            vector.addElement(data);
         }
         return vector;
         

@@ -14,7 +14,7 @@ import javax.swing.JOptionPane;
  */
 public class ResultTest {
     static ImageIcon icon;
-    static Integer n = 0;
+    static Integer n = -1;
     
      protected static ImageIcon createImageIcon(String path) {
         java.net.URL imgURL = ResultTest.class.getResource(path);
@@ -29,6 +29,10 @@ public class ResultTest {
     public static void result(Vector vector){
        for(int i=0;i<vector.size();i++){
            if ((Boolean)vector.get(i)) n = i;
+       }
+       if(n==-1){
+           JOptionPane.showMessageDialog(null, "Пожалуйста, дайте ответ положительный ответ хотя бы на один из вопросов", "Уведомление", 1);
+           return;
        }
        createMessageDialog(n);
     }
