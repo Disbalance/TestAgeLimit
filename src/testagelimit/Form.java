@@ -4,9 +4,10 @@
  */
 package testagelimit;
 
+
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.Vector;
+import java.util.ArrayList;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
@@ -18,11 +19,11 @@ public class Form extends javax.swing.JFrame {
     /**
      * Вектор содержит вопросы
      */
-    private static Vector vectorQuest;
+    private static ArrayList listQuest;
     /**
      * Вектор содержит ответы
      */
-    private static Vector vectorAns = new Vector();
+    private static ArrayList listAns = new ArrayList();
     /**
      * Содержит общее количество вопросов
      */
@@ -253,7 +254,7 @@ public class Form extends javax.swing.JFrame {
      * Завершает тест и передает вектор ответов для получения результата
      */
     public static void endTest(){
-        ResultTest.result(vectorAns);
+        ResultTest.result(listAns);
     }
     
   /**
@@ -261,9 +262,9 @@ public class Form extends javax.swing.JFrame {
   *
   */
     public static void loadFile() throws FileNotFoundException, IOException{
-        vectorQuest = FileTest.parseFile();
-        num = vectorQuest.size()-1;
-        initVectorAns(vectorQuest.size());
+        listQuest = FileTest.parseFile();
+        num = listQuest.size()-1;
+        initListAns(listQuest.size());
         
     }
     /**
@@ -273,7 +274,7 @@ public class Form extends javax.swing.JFrame {
     public static void getData(int i){
         clearRadio();
         jLabel1.setText("Вопрос "+(i+1)+" из "+(num+1));
-        jTextArea1.setText((String) vectorQuest.get(i));
+        jTextArea1.setText((String) listQuest.get(i));
         if(getAns(i)){
            jRadioButton1.setSelected(true);
         }else{
@@ -281,13 +282,13 @@ public class Form extends javax.swing.JFrame {
         }
     }
     /**
-     * Инициализирует вектор ответов,заполняя его ответом false на все вопросы
-     * @param size количество вопросов
+     * 
+     *Инициализирует вектор ответов,заполняя его ответом false на все вопросы
+     * @param size 
      */
-    public static void initVectorAns(int size){
-        vectorAns.setSize(size);
-        for (int i = 0;i<vectorAns.size();i++){
-            vectorAns.set(i, false);
+    public static void initListAns(int size){
+        for (int i = 0;i<listQuest.size();i++){
+            listAns.add(false);
         }             
     }
     /**
@@ -303,7 +304,7 @@ public class Form extends javax.swing.JFrame {
      * @return  возвращает ответ на вопрос, записанный в векторе ответов
      */ 
     public static boolean getAns(int i){
-        return (boolean) vectorAns.get(i);
+        return (boolean) listAns.get(i);
         
     }
     /**
@@ -312,7 +313,7 @@ public class Form extends javax.swing.JFrame {
      * @param ans ответ на данный вопрос
      */
     public static void setAns(int i, boolean ans){
-        vectorAns.set(i, ans);
+        listAns.set(i, ans);
     }
     /**
      * Главный метод вызова формы

@@ -4,13 +4,15 @@
  */
 package testagelimit;
 
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Vector;
+import java.util.ArrayList;
+
 
 /**
  * Данный класс отвечает за загрузку и разбор файла с вопросами
@@ -25,7 +27,7 @@ public class FileTest {
     /**
     * Контейнер для вопросов
     */
-    public  static Vector vector = new Vector();
+    public  static ArrayList list = new ArrayList();
     
     /**
      * Загружает файл fs в файл класса FileTest
@@ -39,7 +41,7 @@ public class FileTest {
      * Разбирает файл с вопросами построчно, заменяя символ & на '\n' для перевода на новую строку в вектор
      * @return vector возвращает вектор, содержаший вопросы
      */
-    public static Vector parseFile() throws FileNotFoundException, IOException{
+    public static ArrayList parseFile() throws FileNotFoundException, IOException{
         BufferedReader reader = null;
         reader = new BufferedReader(new InputStreamReader(new FileInputStream(file), "Cp1251"));
         String s;
@@ -53,9 +55,9 @@ public class FileTest {
                 }
                 data+=ch[i];
             }
-            vector.addElement(data);
+            list.add(data);
         }
-        return vector;
+        return list;
         
     }
     

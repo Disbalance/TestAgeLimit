@@ -4,7 +4,8 @@
  */
 package testagelimit;
 
-import java.util.Vector;
+
+import java.util.ArrayList;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
@@ -41,9 +42,9 @@ public class ResultTest {
       * Анализирует вектор ответов
       * @param vector содержит ответы пользователя на вопросы
       */
-    public static void result(Vector vector){
-       for(int i=0;i<vector.size();i++){
-           if ((Boolean)vector.get(i)) n = i;
+    public static void result(ArrayList list){
+       for(int i=0;i<list.size();i++){
+           if ((Boolean)list.get(i)) n = i;
        }
        if(n==-1){
            JOptionPane.showMessageDialog(null, "Пожалуйста, дайте ответ положительный ответ хотя бы на один из вопросов", "Уведомление", 1);
@@ -71,6 +72,7 @@ public class ResultTest {
                 break;
             }
            case 3: { 
+               
                 icon = createImageIcon("source/icon16.jpg");
                 break;
             }
