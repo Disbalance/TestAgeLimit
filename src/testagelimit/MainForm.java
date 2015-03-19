@@ -7,9 +7,11 @@ package testagelimit;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 /**
@@ -124,7 +126,63 @@ public class MainForm extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         System.exit(0);
     }//GEN-LAST:event_jButton2ActionPerformed
-
+    
+    /**
+     * Тест, по результатом которого должно быть уведомление с результатом 0+
+     * @throws FileNotFoundException
+     * @throws IOException 
+     */
+    protected static void test1() throws FileNotFoundException, IOException{
+        //открываем тестовый файл test.al
+        File  file = new File("test.al"); 
+        //загружаем файл для разбора
+        FileTest.getFile(file);
+        Vector vector = FileTest.parseFile();
+        //загружаем файл в класс формы
+        Form.loadFile();
+        //отвечаем на 1-й вопрос "Да"
+        Form.setAns(0, true);
+        //завершаем тестирование
+        Form.endTest();       
+    }
+    /**
+     * Тест, по результатом которого должно быть уведомление с результатом 18+
+     * @throws FileNotFoundException
+     * @throws IOException 
+     */
+     protected static void test2() throws FileNotFoundException, IOException{
+        //открываем тестовый файл test.al
+        File  file = new File("test.al"); 
+        //загружаем файл для разбора
+        FileTest.getFile(file);
+        Vector vector = FileTest.parseFile();
+        //загружаем файл в класс формы
+        Form.loadFile();
+        //отвечаем на 5-й вопрос "Да"
+        Form.setAns(4, true);
+        //завершаем тестирование
+        Form.endTest();         
+    }
+    /**
+     * Тест, по результатам которого должно быть уведомлене с результатом 12+
+     * @throws FileNotFoundException
+     * @throws IOException 
+     */
+      protected static void test3() throws FileNotFoundException, IOException{
+         //открываем тестовый файл test.al
+        File  file = new File("test.al"); 
+        //загружаем файл для разбора
+        FileTest.getFile(file);
+        Vector vector = FileTest.parseFile();
+        //загружаем файл в класс формы
+        Form.loadFile();
+        //отвечаем на 3-й вопрос "Да"
+        Form.setAns(2, true);
+        //завершаем тестирование
+        Form.endTest();          
+    }
+    
+    
     /**
      * Главный метод вызова формы
      * @param args the command line arguments
@@ -152,7 +210,19 @@ public class MainForm extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(MainForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-
+        if ("test".equals(args[0])){
+            JOptionPane.showMessageDialog(null, "Вы запустили программу в режиме тестирования. Сейчас выполнятся несколько сценариев, после которых вы получите результаты", "Уведомление", 1);
+            try {
+                test1();
+                test2();
+                test3();
+                System.exit(0);
+            } catch (FileNotFoundException ex) {
+                Logger.getLogger(MainForm.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (IOException ex) {
+                Logger.getLogger(MainForm.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {

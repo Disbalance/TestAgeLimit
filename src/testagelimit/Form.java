@@ -246,9 +246,16 @@ public class Form extends javax.swing.JFrame {
   *
   */
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        ResultTest.result(vectorAns);
+        endTest();
     }//GEN-LAST:event_jMenuItem1ActionPerformed
-
+    
+    /**
+     * Завершает тест и передает вектор ответов для получения результата
+     */
+    public static void endTest(){
+        ResultTest.result(vectorAns);
+    }
+    
   /**
   *Загружает вектор из класса FileTest и запускает инициализацию вектора ответов(vectorAns)
   *
