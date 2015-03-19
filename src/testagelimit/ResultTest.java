@@ -26,11 +26,11 @@ public class ResultTest {
         }
      }
      
-    public static Integer result(Vector vector){
+    public static void result(Vector vector){
        for(int i=0;i<vector.size();i++){
            if ((Boolean)vector.get(i)) n = i;
        }
-       return n;
+       createMessageDialog(n);
     }
     
 
@@ -61,14 +61,4 @@ public class ResultTest {
         }
         JOptionPane.showMessageDialog(null, "Рекомендуемое возрастное ограничение", "Результат", JOptionPane.INFORMATION_MESSAGE, icon);
     }
-    
-    public static void main(){
-        createMessageDialog(0);
-        createMessageDialog(1);
-        createMessageDialog(2);
-        createMessageDialog(3);
-        createMessageDialog(4);
-    }
-
-
 }
