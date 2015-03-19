@@ -210,6 +210,7 @@ public class MainForm extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(MainForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        if (args.length!=0){
         if ("test".equals(args[0])){
             JOptionPane.showMessageDialog(null, "Вы запустили программу в режиме тестирования. Сейчас выполнятся несколько сценариев, после которых вы получите результаты", "Уведомление", 1);
             try {
@@ -222,6 +223,7 @@ public class MainForm extends javax.swing.JFrame {
             } catch (IOException ex) {
                 Logger.getLogger(MainForm.class.getName()).log(Level.SEVERE, null, ex);
             }
+         }
         }
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
