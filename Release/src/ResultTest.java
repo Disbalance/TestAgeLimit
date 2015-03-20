@@ -58,7 +58,6 @@ public class ResultTest {
   * @param n содержит результат согласно теста
   */
     public static void createMessageDialog(int n){
-        System.out.println(n);
         switch(n){
             case 0: { 
                 icon = createImageIcon("source/icon0.jpg");
