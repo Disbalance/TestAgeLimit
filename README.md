@@ -17,7 +17,8 @@
 5. Запустить консоль и перейти в папку testagelimit
 
 6. Выполнить команду компиляции:
-javac -sourcepath X:\testagelimit\src\ -d X:\testagelimit\bin\	X:\testagelimit\src\testagelimit\MainForm.java
+javac -sourcepath X:\testagelimit\src\ -d X:\testagelimit\bin\	X:\testagelimit\src\testagelimit\MainForm.java -encoding UTF-8
+
 где
 1) X:\testagelimit\src - путь до папки src;
 2) X:\testagelimit\bin - путь до папки bin
