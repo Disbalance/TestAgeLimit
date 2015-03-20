@@ -11,7 +11,7 @@
 Указать папку C:\Program Files\Java\jdk*-*-*\bin в Имя переменной PATH в параметрах среды
 (подробнее тут http://poleshuk.ru/oshibka-javac-ne-yavlyaetsya-vnutrennej-ili-vneshnej-komandoj/)
 
-2. Скачать репозиторий в виде архива.
+2. Скачать репозиторий в виде архива и распаковать в любую папку.
 
 3. Создать папку testagelimit на диске.
 
