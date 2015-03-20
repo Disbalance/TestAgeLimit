@@ -11,7 +11,7 @@
 
 3. Создать папку testagelimit на диске.
 
-4. Скопировать в созданную ранее папку src и создать папку bin/testagelimit
+4. Скопировать в созданную ранее папку src и создать папку bin
 
 
 5. Запустить консоль и перейти в папку testagelimit
@@ -25,7 +25,7 @@ javac -sourcepath X:\testagelimit\src\ -d X:\testagelimit\bin\	X:\testagelimit\s
 3) X:\testagelimit\src\testagelimit\MainForm.java - путь до главной формы
 X - буква вашего раздела;
 
-7. После компиляции, копируем папку source в папку bin
+7. После компиляции, копируем папку src/source в папку bin/testagelimit
 
 8. Cоздаем с помощью команды manifest.mf:
 echo main-class: testagelimit.MainForm>manifest.mf
