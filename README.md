@@ -3,6 +3,7 @@
 ответить пользователь.
 
 Компиляция Windows:
+
 1. Установить пакет JDK(Java Debelopment Kit)
 Ссылка на  скачивание: http://www.oracle.com/technetwork/java/javase/downloads/index.html
 
