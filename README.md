@@ -6,6 +6,8 @@
 
 1. Установить пакет JDK(Java Development Kit)
 Ссылка на  скачивание: http://www.oracle.com/technetwork/java/javase/downloads/index.html
+Указать папку C:\Program Files\Java\jdk*-*-*\bin в Имя переменной PATH в параметрах среды
+(подробнее тут http://poleshuk.ru/oshibka-javac-ne-yavlyaetsya-vnutrennej-ili-vneshnej-komandoj/)
 
 2. Скачать папку Release, в которой содержится Javadoc и src.
 
