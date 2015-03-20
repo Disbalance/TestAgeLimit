@@ -4,7 +4,7 @@
 
 Компиляция Windows:
 
-1. Установить пакет JDK(Java Debelopment Kit)
+1. Установить пакет JDK(Java Development Kit)
 Ссылка на  скачивание: http://www.oracle.com/technetwork/java/javase/downloads/index.html
 
 2. Скачать папку Release, в которой содержится Javadoc и src.
