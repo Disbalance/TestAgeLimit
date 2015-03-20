@@ -140,7 +140,7 @@ public class MainForm extends javax.swing.JFrame {
         File  file = new File("test.al"); 
         //загружаем файл для разбора
         FileTest.getFile(file);
-        ArrayList list = FileTest.parseFile();
+        ArrayList<String> list = FileTest.parseFile();
         //загружаем файл в класс формы
         Form.loadFile();
         //отвечаем на 1-й вопрос "Да"
@@ -158,7 +158,7 @@ public class MainForm extends javax.swing.JFrame {
         File  file = new File("test.al"); 
         //загружаем файл для разбора
         FileTest.getFile(file);
-        ArrayList list = FileTest.parseFile();
+        ArrayList<String> list = FileTest.parseFile();
         //загружаем файл в класс формы
         Form.loadFile();
         //отвечаем на 5-й вопрос "Да"
@@ -176,7 +176,7 @@ public class MainForm extends javax.swing.JFrame {
         File  file = new File("test.al"); 
         //загружаем файл для разбора
         FileTest.getFile(file);
-        ArrayList list = FileTest.parseFile();
+        ArrayList<String> list = FileTest.parseFile();
         //загружаем файл в класс формы
         Form.loadFile();
         //отвечаем на 3-й вопрос "Да"

@@ -42,7 +42,7 @@ public class ResultTest {
       * Анализирует вектор ответов
       * @param vector содержит ответы пользователя на вопросы
       */
-    public static void result(ArrayList list){
+    public static void result(ArrayList<Boolean> list){
        for(int i=0;i<list.size();i++){
            if ((Boolean)list.get(i)) n = i;
        }

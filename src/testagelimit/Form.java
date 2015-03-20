@@ -19,11 +19,11 @@ public class Form extends javax.swing.JFrame {
     /**
      * Вектор содержит вопросы
      */
-    private static ArrayList listQuest;
+    private static ArrayList<String> listQuest;
     /**
      * Вектор содержит ответы
      */
-    private static ArrayList listAns = new ArrayList();
+    private static ArrayList<Boolean> listAns = new ArrayList<Boolean>();
     /**
      * Содержит общее количество вопросов
      */
@@ -264,7 +264,7 @@ public class Form extends javax.swing.JFrame {
     public static void loadFile() throws FileNotFoundException, IOException{
         listQuest = FileTest.parseFile();
         num = listQuest.size()-1;
-        initListAns(listQuest.size());
+        initListAns();
         
     }
     /**
@@ -282,11 +282,9 @@ public class Form extends javax.swing.JFrame {
         }
     }
     /**
-     * 
-     *Инициализирует вектор ответов,заполняя его ответом false на все вопросы
-     * @param size 
+     * Инициализирует список ответов, записывая в них false 
      */
-    public static void initListAns(int size){
+    public static void initListAns(){
         for (int i = 0;i<listQuest.size();i++){
             listAns.add(false);
         }             

@@ -27,7 +27,7 @@ public class FileTest {
     /**
     * Контейнер для вопросов
     */
-    public  static ArrayList list = new ArrayList();
+    public  static ArrayList<String> list = new ArrayList<String>();
     
     /**
      * Загружает файл fs в файл класса FileTest
@@ -41,7 +41,7 @@ public class FileTest {
      * Разбирает файл с вопросами построчно, заменяя символ & на '\n' для перевода на новую строку в вектор
      * @return vector возвращает вектор, содержаший вопросы
      */
-    public static ArrayList parseFile() throws FileNotFoundException, IOException{
+    public static ArrayList<String> parseFile() throws FileNotFoundException, IOException{
         BufferedReader reader = null;
         reader = new BufferedReader(new InputStreamReader(new FileInputStream(file), "Cp1251"));
         String s;
