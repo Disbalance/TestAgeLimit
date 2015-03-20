@@ -285,6 +285,7 @@ public class Form extends javax.swing.JFrame {
      * Инициализирует список ответов, записывая в них false 
      */
     public static void initListAns(){
+        listAns.clear();
         for (int i = 0;i<listQuest.size();i++){
             listAns.add(false);
         }             

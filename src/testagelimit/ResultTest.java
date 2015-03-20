@@ -58,6 +58,7 @@ public class ResultTest {
   * @param n содержит результат согласно теста
   */
     public static void createMessageDialog(int n){
+        System.out.println(n);
         switch(n){
             case 0: { 
                 icon = createImageIcon("source/icon0.jpg");
@@ -80,7 +81,10 @@ public class ResultTest {
                 icon = createImageIcon("source/icon18.jpg");
                 break;
             }
-           default: System.err.println("Error");
+           default: {
+                     System.err.println("Error");
+                     return;
+           }
         
         }
         JOptionPane.showMessageDialog(null, "Рекомендуемое возрастное ограничение", "Результат", JOptionPane.INFORMATION_MESSAGE, icon);
